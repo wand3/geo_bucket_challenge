@@ -4,7 +4,7 @@ from .config import Config
 from fastapi import FastAPI
 import logging
 from contextlib import asynccontextmanager
-from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
+from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession, async_sessionmaker
 import asyncpg
 from sqlalchemy import text
 from sqlalchemy.orm import sessionmaker
@@ -16,35 +16,35 @@ engine = create_async_engine(Config.DATABASE_URL,
                          echo=True)
 # Create a new async "sessionmaker"
 # This is a configurable factory for creating new AsyncSession objects
-AsyncSessionLocal = sessionmaker(
-    engine, class_=AsyncSession, expire_on_commit=False
+# Use async_sessionmaker instead of the generic sessionmaker
+AsyncSessionLocal = async_sessionmaker(
+    bind=engine,
+    expire_on_commit=False,
+    autoflush=False  # Often recommended for async flows
 )
+
 
 async def create_db_and_tables():
     """
     Initializes the database tables. Should be called once on application startup.
     """
     async with engine.begin() as conn:
-        await conn.run_sync(SQLModel.metadata.drop_all) # Optional: drop tables first
+        await conn.execute(text("CREATE EXTENSION IF NOT EXISTS postgis;"))
+        # await conn.run_sync(SQLModel.metadata.drop_all) # Optional: drop tables first
         await conn.run_sync(SQLModel.metadata.create_all)
         pass
 
-async def get_session() -> AsyncSession:
-    """
-    FastAPI dependency to get an async database session.
-    Ensures the session is always closed, even if errors occur.
-    """
-    async_session = AsyncSessionLocal()
-    try:
-        yield async_session
-    finally:
-        await async_session.close()
+
+async def get_session() -> AsyncGenerator[AsyncSession, None]:
+    async with AsyncSessionLocal as session:
+        yield session
+        # Session is automatically closed here after the request
 
 
 # Test database connection
 async def test_db_connection():
     try:
-        async with AsyncSessionLocal() as session:
+        async with AsyncSessionLocal as session:
             await session.execute(text("SELECT 1"))
         return True
     except Exception as e:

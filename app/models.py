@@ -7,8 +7,9 @@ from sqlalchemy import Column, DateTime, ForeignKey, Index
 from sqlalchemy.sql import func
 from geoalchemy2 import Geography
 
+
 class GeoBucket(SQLModel, table=True):
-    __tablename__ = "geo_buckets"
+    __tablename__ = "geobucket"
 
     id: Optional[int] = Field(default=None, primary_key=True)
 
@@ -37,6 +38,7 @@ class GeoBucket(SQLModel, table=True):
 
     # Relationships
     properties: List["Property"] = Relationship(back_populates="bucket")
+    aliases: List["LocationAlias"] = Relationship(back_populates="bucket")
 
 
 class Property(SQLModel, table=True):
@@ -61,8 +63,8 @@ class Property(SQLModel, table=True):
     )
 
     price: Optional[Decimal] = Field(
-        default=None,
-        sa_column_kwargs={"precision": 12, "scale": 2}
+        default=None
+        # sa_column_kwargs={"precision": 12, "scale": 2}
     )
 
     bedrooms: Optional[int] = None
@@ -70,7 +72,7 @@ class Property(SQLModel, table=True):
 
     bucket_id: Optional[int] = Field(
         default=None,
-        foreign_key="geo_buckets.id",
+        foreign_key="geobucket.id",
         index=True
     )
 
@@ -86,11 +88,41 @@ class Property(SQLModel, table=True):
     bucket: Optional[GeoBucket] = Relationship(back_populates="properties")
 
 
-Index(
-    "idx_properties_center",
-    Property.__table__.c.center,
-    postgresql_using="gist"
-)
+class LocationAlias(SQLModel, table=True):
+    __tablename__ = "location_aliases"
+
+    id: Optional[int] = Field(default=None, primary_key=True)
+
+    # The human-readable name (e.g., "Downtown", "Brooklyn")
+    name: str = Field(index=True, max_length=255)
+
+    # The spatial point for this alias
+    # We use sa_column to explicitly define the PostGIS Geography type
+    location: Optional[any] = Field(
+        default=None,
+        sa_column=Column(
+            Geography(geometry_type='POINT', srid=4326),
+            nullable=False
+        )
+    )
+
+    # Foreign Key to associate with a specific Bucket if needed
+    bucket_id: Optional[int] = Field(default=None, foreign_key="geobucket.id")
+
+    # Relationships
+    bucket: Optional["GeoBucket"] = Relationship(back_populates="aliases")
+
+    class Config:
+        # This allows the model to handle the arbitrary Geography type
+        # from GeoAlchemy2 during Pydantic validation
+        arbitrary_types_allowed = True
+
+
+# Index(
+#     "idx_properties_center",
+#     Property.__table__.c.center,
+#     postgresql_using="gist"
+# )
 
 Index(
     "idx_properties_location_name_lower",

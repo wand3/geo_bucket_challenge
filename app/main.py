@@ -22,7 +22,7 @@ def create_app() -> FastAPI:
     return appl
 
 
-app = create_app()
+app: FastAPI = create_app()
 
 # Startup event
 @app.on_event("startup")

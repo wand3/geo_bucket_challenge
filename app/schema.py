@@ -13,6 +13,11 @@ class PropertyBase(BaseModel):
     bathrooms: int = Field(..., ge=0)
 
 
+class PropertyCreate(PropertyBase):
+    """Schema for creating a new property"""
+    created_at: datetime
+
+
 class PropertyOutSchema(PropertyBase):
     id: int
     bucket_id: Optional[int]
@@ -24,7 +29,7 @@ class PropertyOutSchema(PropertyBase):
         description="List of all names normalized into this bucket (e.g., 'sangotedo', 'Sangotedo Market')"
     )
 
-    created_at: datetime
+    updated_at: datetime
 
     # class Config:
     #     from_attributes = True  # Allows Pydantic to read SQLAlchemy models directly
@@ -35,11 +40,11 @@ class PropertyOutSchema(PropertyBase):
 
 
 class GeoBucketOutSchema(BaseModel):
-    id : int
+    id: int
     canonical_name: str = Field(...)
     # note: center coordinates require extracting from geometry in SQL
-    properties_count: int
-    created_at = datetime
+    properties_count: int = Field(default=0)
+    created_at: datetime
 
     model_config = {
         "from_attributes": True
