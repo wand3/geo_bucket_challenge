@@ -1,7 +1,6 @@
 from datetime import datetime
 from decimal import Decimal
-from typing import Optional, List
-
+from typing import Optional, List, Any
 from sqlmodel import SQLModel, Field, Relationship
 from sqlalchemy import Column, DateTime, ForeignKey, Index
 from sqlalchemy.sql import func
@@ -9,10 +8,10 @@ from geoalchemy2 import Geography
 
 
 class GeoBucket(SQLModel, table=True):
-    __tablename__ = "geobucket"
+    __tablename__ = "geo_buckets"
 
     id: Optional[int] = Field(default=None, primary_key=True)
-
+    h3_index: str = Field(index=True, unique=True, max_length=20)
     # Normalized name e.g. "sangotedo"
     canonical_name: Optional[str] = Field(
         default=None,
@@ -72,7 +71,7 @@ class Property(SQLModel, table=True):
 
     bucket_id: Optional[int] = Field(
         default=None,
-        foreign_key="geobucket.id",
+        foreign_key="geo_buckets.id",
         index=True
     )
 
@@ -93,30 +92,35 @@ class LocationAlias(SQLModel, table=True):
 
     id: Optional[int] = Field(default=None, primary_key=True)
 
-    # The human-readable name (e.g., "Downtown", "Brooklyn")
+    # Human-readable name (e.g., "Sangotedo Market", "Ajah")
     name: str = Field(index=True, max_length=255)
 
-    # The spatial point for this alias
-    # We use sa_column to explicitly define the PostGIS Geography type
-    location: Optional[any] = Field(
-        default=None,
+    # Note: Use 'Any' from typing. Pydantic v2 uses ConfigDict for settings.
+    location: Any = Field(
         sa_column=Column(
             Geography(geometry_type='POINT', srid=4326),
             nullable=False
         )
     )
 
-    # Foreign Key to associate with a specific Bucket if needed
-    bucket_id: Optional[int] = Field(default=None, foreign_key="geobucket.id")
+    # IMPORTANT: Ensure the foreign_key matches your GeoBucket table name exactly
+    # In your previous model, it was "geo_buckets".
+    bucket_id: Optional[int] = Field(
+        default=None,
+        foreign_key="geo_buckets.id",
+        index=True
+    )
 
     # Relationships
     bucket: Optional["GeoBucket"] = Relationship(back_populates="aliases")
+
+    # Pydantic v2 style config
+    # model_config = ConfigDict(arbitrary_types_allowed=True)
 
     class Config:
         # This allows the model to handle the arbitrary Geography type
         # from GeoAlchemy2 during Pydantic validation
         arbitrary_types_allowed = True
-
 
 # Index(
 #     "idx_properties_center",

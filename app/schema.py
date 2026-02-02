@@ -13,9 +13,13 @@ class PropertyBase(BaseModel):
     bathrooms: int = Field(..., ge=0)
 
 
+class PropertyInDB(PropertyBase):
+    created_at: datetime
+
+
 class PropertyCreate(PropertyBase):
     """Schema for creating a new property"""
-    created_at: datetime
+    pass
 
 
 class PropertyOutSchema(PropertyBase):

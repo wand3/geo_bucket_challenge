@@ -30,13 +30,13 @@ async def create_db_and_tables():
     """
     async with engine.begin() as conn:
         await conn.execute(text("CREATE EXTENSION IF NOT EXISTS postgis;"))
-        # await conn.run_sync(SQLModel.metadata.drop_all) # Optional: drop tables first
+        await conn.run_sync(SQLModel.metadata.drop_all) # Optional: drop tables first
         await conn.run_sync(SQLModel.metadata.create_all)
         pass
 
 
 async def get_session() -> AsyncGenerator[AsyncSession, None]:
-    async with AsyncSessionLocal as session:
+    async with AsyncSessionLocal() as session:
         yield session
         # Session is automatically closed here after the request
 
@@ -44,7 +44,7 @@ async def get_session() -> AsyncGenerator[AsyncSession, None]:
 # Test database connection
 async def test_db_connection():
     try:
-        async with AsyncSessionLocal as session:
+        async with AsyncSessionLocal() as session:
             await session.execute(text("SELECT 1"))
         return True
     except Exception as e:
