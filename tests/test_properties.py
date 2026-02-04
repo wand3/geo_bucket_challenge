@@ -1,6 +1,6 @@
 import pytest
 from httpx import AsyncClient
-from .conftest import async_client, setup_test_db
+from .conftest import async_client, setup_test_db, clear_db
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlmodel import select
 from app.models import Property, GeoBucket  # Adjust based on your path
@@ -13,6 +13,21 @@ class TestLocationNormalization:
     Searching 'sangotedo' must return properties with varied names
     that fell into the same geo-bucket.
     """
+
+    async def test_create_property(self, async_client: AsyncClient, clear_db):
+        response = await async_client.post(
+            "/api/properties",
+            json={
+                "title": "Apartment A",
+                "location_name": "Sangotedo",
+                "lat": 6.4698,
+                "lng": 3.6285,
+                "price": 25000000.0,
+                "bedrooms": 3,
+                "bathrooms": 2
+            },
+        )
+        assert response.status_code == 201
 
     async def test_sangotedo_normalization_flow(self, async_client: AsyncClient, setup_test_db):
         # 1. Create 3 properties with coordinate drift and different names

@@ -1,9 +1,8 @@
 import os
-
 import pytest
 import asyncio
-from httpx import AsyncClient
-from sqlmodel import SQLModel
+from httpx import AsyncClient, ASGITransport
+from sqlmodel import SQLModel, text
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession, async_sessionmaker
 from app.main import app  # your FastAPI app which includes routes
 from app.database import get_session  # we will override this
@@ -26,19 +25,38 @@ async def override_get_session():
 async def setup_test_db():
     # create tables
     async with test_engine.begin() as conn:
+        await conn.execute(text("CREATE EXTENSION IF NOT EXISTS postgis;"))
         await conn.run_sync(SQLModel.metadata.drop_all)
         await conn.run_sync(SQLModel.metadata.create_all)
     yield
     await test_engine.dispose()
 
 
+# @pytest.fixture
+# async def async_client():
+#     # patch the dependency
+#     app.dependency_overrides[get_session] = override_get_session
+#     async with AsyncClient(app=app) as client:
+#         yield client
+#     # async with AsyncClient(app) as client:
+#     #     yield client
+#
+#     app.dependency_overrides.pop(get_session, None)
+
+
 @pytest.fixture
 async def async_client():
-    # patch the dependency
     app.dependency_overrides[get_session] = override_get_session
-    async with AsyncClient(app=app) as client:
+    # Wrap the app in ASGITransport and provide a base_url
+    transport = ASGITransport(app=app)
+    async with AsyncClient(transport=transport, base_url="http://test") as client:
         yield client
-    # async with AsyncClient(app) as client:
-    #     yield client
+    app.dependency_overrides.clear()
 
-    app.dependency_overrides.pop(get_session, None)
+
+@pytest.fixture(scope='session', autouse=True)
+async def clear_db():
+    async with test_engine.begin() as conn:
+        await conn.run_sync(SQLModel.metadata.drop_all)
+    yield
+    await test_engine.dispose()

@@ -2,7 +2,7 @@ import os
 from fastapi import FastAPI, Request
 from .routes import api_router
 import uvicorn
-from .database import get_session, create_db_and_tables
+from .database import get_session, create_db_and_tables, lifespan
 from .logger import logger
 from pathlib import Path
 import asyncio
@@ -12,7 +12,7 @@ import asyncio
 def create_app() -> FastAPI:
     # asyncio.run(main())
     logger.info('Application is starting -----------')
-    appl: FastAPI = FastAPI(db_lifespan=get_session)
+    appl: FastAPI = FastAPI(db_lifespan=lifespan)
 
     logger.info(f'Application started -----------')
 

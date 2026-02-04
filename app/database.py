@@ -10,6 +10,7 @@ from sqlalchemy import text
 from sqlalchemy.orm import sessionmaker
 from sqlmodel import SQLModel
 import asyncio
+from contextlib import asynccontextmanager
 
 
 engine = create_async_engine(Config.DATABASE_URL,
@@ -22,6 +23,13 @@ AsyncSessionLocal = async_sessionmaker(
     expire_on_commit=False,
     autoflush=False  # Often recommended for async flows
 )
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # What happens on startup
+    await create_db_and_tables()
+    yield
 
 
 async def create_db_and_tables():
