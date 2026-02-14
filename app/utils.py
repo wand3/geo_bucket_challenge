@@ -1,4 +1,4 @@
-import datetime
+from datetime import datetime
 from sqlmodel import select, func
 import h3
 import asyncio
@@ -9,6 +9,10 @@ from geoalchemy2.elements import WKTElement
 from sqlalchemy.ext.asyncio import AsyncSession
 from .models import Property, GeoBucket, LocationAlias
 from .schema import PropertyCreate, PropertyBase, PropertyOutSchema, GeoBucketOutSchema
+from .logger import setup_logger
+
+
+logger = setup_logger("Utils", "DEBUG", "app.log")
 
 # Initialize Geocoder with a unique user-agent to comply with OSM policy
 geolocator = Nominatim(user_agent="expert_listing_backend_v1")
@@ -19,15 +23,8 @@ def get_h3_index(lat: float, lng: float, resolution: int = 8) -> str:
     Converts coordinates into a unique H3 hexagonal bucket ID.
     Resolution 8 covers approx 0.74 km^2 (neighborhood scale).
     """
+    logger.info(f"Get h3 index: {h3.latlng_to_cell(lat, lng, resolution)}")
     return h3.latlng_to_cell(lat, lng, resolution)
-
-
-def get_h3_center(h3_index: str) -> Tuple[float, float]:
-    """
-    Returns the (lat, lng) center point of a given H3 hexagon.
-    Useful for placing the bucket marker on the map.
-    """
-    return h3.h3_to_geo(h3_index)
 
 
 async def geocode_query(query: str) -> Optional[Tuple[float, float]]:
@@ -47,12 +44,13 @@ async def geocode_query(query: str) -> Optional[Tuple[float, float]]:
         )
 
         if location:
-            return (location.latitude, location.longitude)
+            logger.info(f"Get geocode query: {location.latitude, location.longitude}")
+
+            return location.latitude, location.longitude
         return None
 
     except (GeocoderServiceError, Exception) as e:
-        # In a real app, use logger.error(f"Geocoding failed: {e}")
-        print(f"Geocoding error: {e}")
+        logger.error(f"Geocoding failed: {e}")
         return None
 
 
@@ -71,7 +69,7 @@ async def search_properties(session: AsyncSession, location_query: str) -> List[
     bucket_ids = set()
     cleaned_query = location_query.strip()
 
-    # Step 1: Alias Search (Fast DB Lookup)
+    # Alias Search (Fast DB Lookup)
     # Using ILIKE for partial matching (e.g., "Sangotedo" matches "Sangotedo, Ajah")
     stmt = select(LocationAlias.bucket_id).where(
         LocationAlias.name.ilike(f"%{cleaned_query}%")
@@ -79,13 +77,13 @@ async def search_properties(session: AsyncSession, location_query: str) -> List[
     found_ids = (await session.execute(stmt)).scalars().all()
     bucket_ids.update(found_ids)
 
-    # Step 2: Geocoding Fallback (External API)
+    # Geocoding Fallback (External API)
     if not bucket_ids:
         # If DB lookup fails, ask Geopy where this place is
         coords = await geocode_query(cleaned_query)
         if coords:
             lat, lng = coords
-            target_h3 = h3.latlng_to_cell(lat, lng, 8)
+            target_h3 = get_h3_index(lat, lng, 8)
 
             # Find which bucket owns this coordinate
             bucket_stmt = select(GeoBucket.id).where(GeoBucket.h3_index == target_h3)
@@ -99,7 +97,8 @@ async def search_properties(session: AsyncSession, location_query: str) -> List[
 
     # Fetch all properties linked to the found buckets
     prop_stmt = select(Property).where(Property.bucket_id.in_(bucket_ids))
-    return (await session.execute(prop_stmt)).scalars().all()
+    return_prop_smtp = await (session.execute(prop_stmt)).scalars().all()
+    return return_prop_smtp
 
 
 async def create_property(session: AsyncSession, prop_in: PropertyCreate) -> Property:
@@ -112,11 +111,14 @@ async def create_property(session: AsyncSession, prop_in: PropertyCreate) -> Pro
     4. Saves the property.
     """
     # 1. Generate H3 Index (Resolution 8 ~0.7km^2)
-    h3_index = h3.latlng_to_cell(prop_in.lat, prop_in.lng, 8)
+    # h3_index = h3.latlng_to_cell(prop_in.lat, prop_in.lng, 8)
+    h3_index = get_h3_index(prop_in.lat, prop_in.lng, 8)
 
     # 2. Find or Create GeoBucket
     query_bucket = select(GeoBucket).where(GeoBucket.h3_index == h3_index)
     bucket = (await session.execute(query_bucket)).scalar_one_or_none()
+
+    logger.info(f"Query bucket: {bucket}")
 
     if not bucket:
         # Create new bucket with WKT Point
@@ -126,20 +128,21 @@ async def create_property(session: AsyncSession, prop_in: PropertyCreate) -> Pro
             canonical_name=prop_in.location_name,
             center=center_wkt
         )
-        session.add(bucket)
+
+        logger.info(f"Query Bucket: {bucket}")
+
+        await session.add(bucket)
         await session.flush()  # Generate ID without committing
         await session.refresh(bucket)
 
-    # 3. Handle Location Aliases
+    # Handle Location Aliases
     query_alias = select(LocationAlias).where(
         func.lower(LocationAlias.name) == prop_in.location_name.lower(),
         LocationAlias.bucket_id == bucket.id
     )
     existing_alias = (await session.execute(query_alias)).scalar_one_or_none()
 
-    # if not existing_alias:
-    #     new_alias = LocationAlias(name=prop_in.location_name, bucket_id=bucket.id)
-    #     session.add(new_alias)
+    logger.info(f"Existing Alias: {existing_alias}")
 
     if not existing_alias:
         new_alias = LocationAlias()
@@ -150,7 +153,9 @@ async def create_property(session: AsyncSession, prop_in: PropertyCreate) -> Pro
         point_wkt = f"POINT({prop_in.lng} {prop_in.lat})"
         new_alias.location = WKTElement(point_wkt, srid=4326)
 
-        session.add(new_alias)
+        logger.info(f"New Alias: {new_alias}")
+
+        await session.add(new_alias)
     # 4. Create Property
     prop_geom = f"POINT({prop_in.lng} {prop_in.lat})"
     db_property = Property(
@@ -163,11 +168,11 @@ async def create_property(session: AsyncSession, prop_in: PropertyCreate) -> Pro
         bedrooms=prop_in.bedrooms,
         bathrooms=prop_in.bathrooms,
         bucket_id=bucket.id,
-        center=prop_geom
-        # created_at=datetime.utcnow()
+        center=prop_geom,
+        created_at=datetime.utcnow()
     )
 
-    session.add(db_property)
+    await session.add(db_property)
     await session.commit()
     await session.refresh(db_property)
     return db_property

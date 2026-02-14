@@ -1,11 +1,11 @@
-from pydantic import BaseModel, Field, validator
+from pydantic import BaseModel, Field, validator, ConfigDict
 from typing import List, Optional
 from datetime import datetime
 
 
 class PropertyBase(BaseModel):
-    title: str = Field(..., example="Modern 3-Bedroom Apartment")
-    location_name: str = Field(..., example="Sangotedo, Ajah")
+    title: str = Field(..., json_schema_extra={"example": "Modern 3-Bedroom Apartment"})
+    location_name: str = Field(..., json_schema_extra={"example": "Sangotedo, Ajah"})
     lat: float = Field(..., ge=-90, le=90)
     lng: float = Field(..., ge=-180, le=180)
     price: float = Field(..., gt=0)
@@ -19,7 +19,6 @@ class PropertyInDB(PropertyBase):
 
 class PropertyCreate(PropertyBase):
     """Schema for creating a new property"""
-    pass
 
 
 class PropertyOutSchema(PropertyBase):
@@ -35,9 +34,7 @@ class PropertyOutSchema(PropertyBase):
 
     updated_at: datetime
 
-    # class Config:
     #     from_attributes = True  # Allows Pydantic to read SQLAlchemy models directly
-
     model_config = {
             "from_attributes": True
         }

@@ -5,7 +5,7 @@ from sqlmodel import Field, Session
 from .database import get_session
 from .models import Property, GeoBucket, LocationAlias
 from .schema import PropertyCreate, PropertyBase, PropertyOutSchema, GeoBucketOutSchema
-from .utils import geocode_query, search_properties, get_h3_index, get_h3_center, get_nearby_h3_indices, create_property
+from .utils import geocode_query, search_properties, get_h3_index, get_nearby_h3_indices, create_property
 import h3
 from sqlalchemy.ext.asyncio import AsyncSession
 

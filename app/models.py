@@ -5,11 +5,11 @@ from sqlmodel import SQLModel, Field, Relationship
 from sqlalchemy import Column, DateTime, ForeignKey, Index
 from sqlalchemy.sql import func
 from geoalchemy2 import Geography
+from pydantic import ConfigDict
 
 
 class GeoBucket(SQLModel, table=True):
     __tablename__ = "geo_buckets"
-
     id: Optional[int] = Field(default=None, primary_key=True)
     h3_index: str = Field(index=True, unique=True, max_length=20)
     # Normalized name e.g. "sangotedo"
@@ -19,7 +19,7 @@ class GeoBucket(SQLModel, table=True):
         max_length=255
     )
 
-    # PostGIS geography point
+    # PostGIS's geography point
     center: str = Field(
         sa_column=Column(
             Geography(geometry_type="POINT", srid=4326),
@@ -42,7 +42,6 @@ class GeoBucket(SQLModel, table=True):
 
 class Property(SQLModel, table=True):
     __tablename__ = "properties"
-
     id: Optional[int] = Field(default=None, primary_key=True)
 
     title: Optional[str] = Field(default=None, max_length=512)
@@ -85,6 +84,7 @@ class Property(SQLModel, table=True):
 
     # Relationships
     bucket: Optional[GeoBucket] = Relationship(back_populates="properties")
+    # model_config = ConfigDict(table_name="properties")  # <--- New V2 style
 
 
 class LocationAlias(SQLModel, table=True):
@@ -114,9 +114,6 @@ class LocationAlias(SQLModel, table=True):
     # Relationships
     bucket: Optional["GeoBucket"] = Relationship(back_populates="aliases")
 
-    # Pydantic v2 style config
-    # model_config = ConfigDict(arbitrary_types_allowed=True)
-
     class Config:
         # This allows the model to handle the arbitrary Geography type
         # from GeoAlchemy2 during Pydantic validation
@@ -127,6 +124,7 @@ class LocationAlias(SQLModel, table=True):
 #     Property.__table__.c.center,
 #     postgresql_using="gist"
 # )
+
 
 Index(
     "idx_properties_location_name_lower",
