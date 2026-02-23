@@ -7,6 +7,9 @@ from app.database import get_session
 from unittest.mock import AsyncMock
 from httpx import AsyncClient, ASGITransport
 from app.main import app
+from app.logger import setup_logger
+
+logger = setup_logger('testlogger', level="DEBUG", log_file="tests.log")
 
 # Get test database URL
 TEST_DATABASE_URL = os.getenv("TEST_DATABASE_URL")
@@ -34,7 +37,7 @@ async def setup_test_db():
     # Create extension and tables
     async with test_engine.begin() as conn:
         await conn.execute(text("CREATE EXTENSION IF NOT EXISTS postgis;"))
-        await conn.run_sync(SQLModel.metadata.drop_all)
+        # await conn.run_sync(SQLModel.metadata.drop_all)
         await conn.run_sync(SQLModel.metadata.create_all)
 
     yield

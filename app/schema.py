@@ -32,7 +32,7 @@ class PropertyOutSchema(PropertyBase):
         description="List of all names normalized into this bucket (e.g., 'sangotedo', 'Sangotedo Market')"
     )
 
-    updated_at: datetime
+    created_at: datetime
 
     #     from_attributes = True  # Allows Pydantic to read SQLAlchemy models directly
     model_config = {
@@ -46,6 +46,29 @@ class GeoBucketOutSchema(BaseModel):
     # note: center coordinates require extracting from geometry in SQL
     properties_count: int = Field(default=0)
     created_at: datetime
+
+    model_config = {
+        "from_attributes": True
+    }
+
+
+class BucketSchema(BaseModel):
+    id: Optional[int] = Field(None, description="Unique identifier for the bucket")
+    bucket_id: Optional[int] = Field(None, description="Associated bucket ID")
+    h3_index: str = Field(..., description="H3 index string")
+    canonical_name: Optional[str] = Field(None, description="Canonical name of the location")
+    center: Optional[str] = Field(None, description="Center geometry in WKT/WKB format")
+
+    model_config = {
+        "from_attributes": True
+    }
+
+
+class AliasSchema(BaseModel):
+    id: Optional[int] = Field(None, description="Unique identifier for the bucket")
+    location: Optional[str] = Field(None, description="Location geometry in WKT/WKB format")
+    name: Optional[str] = Field(None, description="Alias name for the location")
+    bucket_id: Optional[int]
 
     model_config = {
         "from_attributes": True

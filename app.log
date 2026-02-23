@@ -96,3 +96,362 @@ DEBUG: 2026-02-14 09:32:14,137 INFO: Query bucket: None
 DEBUG: 2026-02-14 09:32:14,153 INFO: Query Bucket: h3_index='88589c8563fffff' canonical_name='Sangotedo' center='POINT(3.6285 6.4698)' id=None
 DEBUG: 2026-02-14 09:32:14,159 INFO: Existing Alias: None
 DEBUG: 2026-02-14 09:32:14,160 INFO: New Alias: id=None bucket_id=1 name='Sangotedo' location=<WKTElement at 0x112106c10; POINT(3.6285 6.4698)>
+DEBUG: 2026-02-14 23:32:26,939 INFO: Application is starting -----------
+DEBUG: 2026-02-14 23:32:26,940 INFO: Application started -----------
+DEBUG: 2026-02-14 23:32:34,488 INFO: Application is starting -----------
+DEBUG: 2026-02-14 23:32:34,489 INFO: Application started -----------
+DEBUG: 2026-02-14 23:32:37,423 INFO: Get h3 index: 88589c8563fffff
+DEBUG: 2026-02-14 23:32:37,486 INFO: Query bucket: None
+DEBUG: 2026-02-14 23:32:37,487 INFO: Query Bucket: h3_index='88589c8563fffff' canonical_name='Sangotedo' center='POINT(3.6285 6.4698)' id=None
+DEBUG: 2026-02-14 23:33:05,037 INFO: Application is starting -----------
+DEBUG: 2026-02-14 23:33:05,041 INFO: Application started -----------
+DEBUG: 2026-02-14 23:33:05,609 INFO: Get h3 index: 88589c8563fffff
+DEBUG: 2026-02-14 23:33:05,635 INFO: Query bucket: None
+DEBUG: 2026-02-14 23:33:05,636 INFO: Query Bucket: h3_index='88589c8563fffff' canonical_name='Sangotedo' center='POINT(3.6285 6.4698)' id=None
+DEBUG: 2026-02-14 23:33:05,713 INFO: Existing Alias: None
+DEBUG: 2026-02-14 23:33:05,714 INFO: New Alias: id=None bucket_id=1 name='Sangotedo' location=<WKTElement at 0x106ce8e80; POINT(3.6285 6.4698)>
+DEBUG: 2026-02-14 23:33:23,375 INFO: Application is starting -----------
+DEBUG: 2026-02-14 23:33:23,375 INFO: Application started -----------
+DEBUG: 2026-02-14 23:33:28,425 INFO: Get h3 index: 88589c8563fffff
+DEBUG: 2026-02-14 23:33:28,455 INFO: Query bucket: None
+DEBUG: 2026-02-14 23:33:28,456 INFO: Query Bucket: h3_index='88589c8563fffff' canonical_name='Sangotedo' center='POINT(3.6285 6.4698)' id=None
+DEBUG: 2026-02-14 23:33:28,484 INFO: Existing Alias: None
+DEBUG: 2026-02-14 23:33:28,484 INFO: New Alias: id=None bucket_id=1 name='Sangotedo' location=<WKTElement at 0x107fcfe80; POINT(3.6285 6.4698)>
+DEBUG: 2026-02-14 23:33:45,844 INFO: Application is starting -----------
+DEBUG: 2026-02-14 23:33:45,845 INFO: Application started -----------
+DEBUG: 2026-02-14 23:33:51,434 INFO: Get h3 index: 88589c8563fffff
+DEBUG: 2026-02-14 23:33:51,457 INFO: Query bucket: None
+DEBUG: 2026-02-14 23:33:51,458 INFO: Query Bucket: h3_index='88589c8563fffff' canonical_name='Sangotedo' center='POINT(3.6285 6.4698)' id=None
+DEBUG: 2026-02-14 23:33:51,483 INFO: Existing Alias: None
+DEBUG: 2026-02-14 23:33:51,483 INFO: New Alias: id=None bucket_id=1 name='Sangotedo' location=<WKTElement at 0x10877ce80; POINT(3.6285 6.4698)>
+DEBUG: 2026-02-14 23:36:23,209 INFO: Application is starting -----------
+DEBUG: 2026-02-14 23:36:23,211 INFO: Application started -----------
+DEBUG: 2026-02-14 23:36:23,907 INFO: Get h3 index: 88589c8563fffff
+DEBUG: 2026-02-14 23:36:23,938 INFO: Query bucket: None
+DEBUG: 2026-02-14 23:36:23,939 INFO: Query Bucket: h3_index='88589c8563fffff' canonical_name='Sangotedo' center='POINT(3.6285 6.4698)' id=None
+DEBUG: 2026-02-14 23:36:23,965 INFO: Existing Alias: None
+DEBUG: 2026-02-14 23:36:23,965 INFO: New Alias: id=None bucket_id=1 name='Sangotedo' location=<WKTElement at 0x113e8be80; POINT(3.6285 6.4698)>
+DEBUG: 2026-02-14 23:40:26,187 INFO: Application is starting -----------
+DEBUG: 2026-02-14 23:40:26,189 INFO: Application started -----------
+DEBUG: 2026-02-17 21:22:56,150 INFO: Application is starting -----------
+DEBUG: 2026-02-17 21:22:56,152 INFO: Application started -----------
+DEBUG: 2026-02-17 21:38:43,822 INFO: Application is starting -----------
+DEBUG: 2026-02-17 21:38:43,824 INFO: Application started -----------
+DEBUG: 2026-02-17 21:38:45,311 INFO: Query bucket: None
+DEBUG: 2026-02-17 21:38:45,330 INFO: Query Bucket: h3_index='88589c8563fffff' canonical_name='Sangotedo' center='POINT(3.6285 6.4698)' id=None
+DEBUG: 2026-02-17 21:38:45,335 INFO: Existing Alias: None
+DEBUG: 2026-02-17 21:38:45,335 INFO: New Alias: id=None bucket_id=1 name='Sangotedo' location=<WKTElement at 0x10fb76760; POINT(3.6285 6.4698)>
+DEBUG: 2026-02-17 21:39:17,450 INFO: Application is starting -----------
+DEBUG: 2026-02-17 21:39:17,452 INFO: Application started -----------
+DEBUG: 2026-02-17 21:39:17,891 INFO: Query bucket: None
+DEBUG: 2026-02-17 21:39:17,907 INFO: Query Bucket: h3_index='88589c8563fffff' canonical_name='Sangotedo' center='POINT(3.6285 6.4698)' id=None
+DEBUG: 2026-02-17 21:39:17,912 INFO: Existing Alias: None
+DEBUG: 2026-02-17 21:39:17,913 INFO: New Alias: id=None bucket_id=1 name='Sangotedo' location=<WKTElement at 0x1132ab850; POINT(3.6285 6.4698)>
+DEBUG: 2026-02-17 21:40:39,406 INFO: Application is starting -----------
+DEBUG: 2026-02-17 21:40:39,411 INFO: Application started -----------
+DEBUG: 2026-02-17 21:40:39,922 INFO: Query bucket: None
+DEBUG: 2026-02-17 21:40:39,932 INFO: Query Bucket: h3_index='88589c8563fffff' canonical_name='Sangotedo' center='POINT(3.6285 6.4698)' id=None
+DEBUG: 2026-02-17 21:40:39,936 INFO: Existing Alias: None
+DEBUG: 2026-02-17 21:40:39,936 INFO: New Alias: id=None bucket_id=1 name='Sangotedo' location=<WKTElement at 0x108c5a8b0; POINT(3.6285 6.4698)>
+DEBUG: 2026-02-17 21:42:12,703 INFO: Application is starting -----------
+DEBUG: 2026-02-17 21:42:12,705 INFO: Application started -----------
+DEBUG: 2026-02-17 21:42:13,179 INFO: Query bucket: None
+DEBUG: 2026-02-17 21:42:13,190 INFO: Query Bucket: h3_index='88589c8563fffff' canonical_name='Sangotedo' center='POINT(3.6285 6.4698)' id=None
+DEBUG: 2026-02-17 21:42:13,195 INFO: Existing Alias: None
+DEBUG: 2026-02-17 21:42:13,196 INFO: New Alias: id=None bucket_id=1 name='Sangotedo' location=<WKTElement at 0x1134c1b50; POINT(3.6285 6.4698)>
+DEBUG: 2026-02-17 21:45:40,454 INFO: Application is starting -----------
+DEBUG: 2026-02-17 21:45:40,456 INFO: Application started -----------
+DEBUG: 2026-02-17 21:45:41,147 INFO: Query bucket: None
+DEBUG: 2026-02-17 21:45:41,158 INFO: Query Bucket: h3_index='88589c8563fffff' canonical_name='Sangotedo' center='POINT(3.6285 6.4698)' id=None
+DEBUG: 2026-02-17 21:45:41,161 INFO: Existing Alias: None
+DEBUG: 2026-02-17 21:45:41,162 INFO: New Alias: id=None bucket_id=1 name='Sangotedo' location=<WKTElement at 0x107310be0; POINT(3.6285 6.4698)>
+DEBUG: 2026-02-17 21:45:41,191 INFO: Query bucket: {'name': 'Sangotedo', 'location': '<WKBElement at 0x10722edf0; 0101000000ba490c022b070d40a9a44e4013e11940>', 'bucket_id': '1'}
+DEBUG: 2026-02-17 21:47:22,473 INFO: Application is starting -----------
+DEBUG: 2026-02-17 21:47:22,476 INFO: Application started -----------
+DEBUG: 2026-02-17 21:47:23,049 INFO: Query bucket: None
+DEBUG: 2026-02-17 21:47:23,061 INFO: Query Bucket: h3_index='88589c8563fffff' canonical_name='Sangotedo' center='POINT(3.6285 6.4698)' id=None
+DEBUG: 2026-02-17 21:47:23,066 INFO: Existing Alias: None
+DEBUG: 2026-02-17 21:47:23,066 INFO: New Alias: id=None bucket_id=1 name='Sangotedo' location=<WKTElement at 0x108c11a60; POINT(3.6285 6.4698)>
+DEBUG: 2026-02-17 21:47:23,093 INFO: Query bucket: {'name': 'Sangotedo', 'location': '<WKBElement at 0x10722edf0; 0101000000ba490c022b070d40a9a44e4013e11940>', 'bucket_id': '1'}
+DEBUG: 2026-02-17 21:50:27,019 INFO: Application is starting -----------
+DEBUG: 2026-02-17 21:50:27,021 INFO: Application started -----------
+DEBUG: 2026-02-17 21:50:29,462 INFO: Query bucket: None
+DEBUG: 2026-02-17 21:50:29,474 INFO: Query Bucket: h3_index='88589c8563fffff' canonical_name='Sangotedo' center='POINT(3.6285 6.4698)' id=None
+DEBUG: 2026-02-17 21:50:29,478 INFO: Existing Alias: None
+DEBUG: 2026-02-17 21:50:29,479 INFO: New Alias: id=None bucket_id=1 name='Sangotedo' location=<WKTElement at 0x10bc20c10; POINT(3.6285 6.4698)>
+DEBUG: 2026-02-17 21:50:29,517 INFO: Query bucket: {'name': 'Sangotedo', 'location': '<WKBElement at 0x10722edf0; 0101000000ba490c022b070d40a9a44e4013e11940>', 'bucket_id': '1'}
+DEBUG: 2026-02-18 03:05:43,525 INFO: Application is starting -----------
+DEBUG: 2026-02-18 03:05:43,528 INFO: Application started -----------
+DEBUG: 2026-02-18 03:05:44,911 INFO: Query bucket: None
+DEBUG: 2026-02-18 03:05:44,922 INFO: Query Bucket: h3_index='88589c8563fffff' canonical_name='Sangotedo' center='POINT(3.6285 6.4698)' id=None
+DEBUG: 2026-02-18 03:05:44,926 INFO: Existing Alias: None
+DEBUG: 2026-02-18 03:05:44,926 INFO: New Alias: id=None bucket_id=1 name='Sangotedo' location=<WKTElement at 0x10dd41c10; POINT(3.6285 6.4698)>
+DEBUG: 2026-02-18 03:05:44,953 INFO: Query bucket: {'id': 1, 'name': 'Sangotedo', 'location': '<WKBElement at 0x10722edf0; 0101000000ba490c022b070d40a9a44e4013e11940>', 'bucket_id': '1'}
+DEBUG: 2026-02-18 03:08:43,295 INFO: Application is starting -----------
+DEBUG: 2026-02-18 03:08:43,298 INFO: Application started -----------
+DEBUG: 2026-02-18 03:08:45,502 INFO: Query bucket: None
+DEBUG: 2026-02-18 03:08:45,518 INFO: Query Bucket: h3_index='88589c8563fffff' canonical_name='Sangotedo' center='POINT(3.6285 6.4698)' id=None
+DEBUG: 2026-02-18 03:08:45,526 INFO: Existing Alias: None
+DEBUG: 2026-02-18 03:08:45,527 INFO: New Alias: id=None bucket_id=1 name='Sangotedo' location=<WKTElement at 0x10a8d2b50; POINT(3.6285 6.4698)>
+DEBUG: 2026-02-18 03:08:45,575 INFO: Query bucket: {'id': 1, 'name': 'Sangotedo', 'location': '<WKBElement at 0x10722edf0; 0101000000ba490c022b070d40a9a44e4013e11940>', 'bucket_id': '1'}
+DEBUG: 2026-02-18 03:09:42,324 INFO: Application is starting -----------
+DEBUG: 2026-02-18 03:09:42,326 INFO: Application started -----------
+DEBUG: 2026-02-18 03:09:42,897 INFO: Query bucket: None
+DEBUG: 2026-02-18 03:09:42,909 INFO: Query Bucket: h3_index='88589c8563fffff' canonical_name='Sangotedo' center='POINT(3.6285 6.4698)' id=None
+DEBUG: 2026-02-18 03:09:42,913 INFO: Existing Alias: None
+DEBUG: 2026-02-18 03:09:42,914 INFO: New Alias: id=None bucket_id=1 name='Sangotedo' location=<WKTElement at 0x110208b80; POINT(3.6285 6.4698)>
+DEBUG: 2026-02-18 03:09:42,942 INFO: Query bucket: {'id': 1, 'name': 'Sangotedo', 'location': '<WKBElement at 0x10722edf0; 0101000000ba490c022b070d40a9a44e4013e11940>', 'bucket_id': '1'}
+DEBUG: 2026-02-18 03:11:12,940 INFO: Application is starting -----------
+DEBUG: 2026-02-18 03:11:12,942 INFO: Application started -----------
+DEBUG: 2026-02-18 03:11:13,618 INFO: Query bucket: None
+DEBUG: 2026-02-18 03:11:13,631 INFO: Query Bucket: h3_index='88589c8563fffff' canonical_name='Sangotedo' center='POINT(3.6285 6.4698)' id=None
+DEBUG: 2026-02-18 03:11:13,636 INFO: Existing Alias: None
+DEBUG: 2026-02-18 03:11:13,636 INFO: New Alias: id=None bucket_id=1 name='Sangotedo' location=<WKTElement at 0x10a2f0b20; POINT(3.6285 6.4698)>
+DEBUG: 2026-02-18 03:11:13,665 INFO: Query bucket: {'id': 1, 'name': 'Sangotedo', 'location': '<WKBElement at 0x10722edf0; 0101000000ba490c022b070d40a9a44e4013e11940>', 'bucket_id': '1'}
+DEBUG: 2026-02-18 03:12:48,567 INFO: Application is starting -----------
+DEBUG: 2026-02-18 03:12:48,568 INFO: Application started -----------
+DEBUG: 2026-02-18 03:12:49,085 INFO: Query bucket: None
+DEBUG: 2026-02-18 03:12:49,100 INFO: Query Bucket: h3_index='88589c8563fffff' canonical_name='Sangotedo' center='POINT(3.6285 6.4698)' id=None
+DEBUG: 2026-02-18 03:12:49,107 INFO: Existing Alias: None
+DEBUG: 2026-02-18 03:12:49,107 INFO: New Alias: id=None bucket_id=None name='Sangotedo' location=<WKTElement at 0x112314e20; POINT(3.6285 6.4698)>
+DEBUG: 2026-02-18 03:12:49,273 INFO: Query bucket: {'id': 1, 'name': 'Sangotedo', 'location': '<WKBElement at 0x10722edf0; 0101000000ba490c022b070d40a9a44e4013e11940>', 'bucket_id': '1'}
+DEBUG: 2026-02-18 03:14:13,812 INFO: Application is starting -----------
+DEBUG: 2026-02-18 03:14:13,814 INFO: Application started -----------
+DEBUG: 2026-02-18 03:14:14,813 INFO: Query bucket: None
+DEBUG: 2026-02-18 03:14:14,828 INFO: Query Bucket: h3_index='88589c8563fffff' canonical_name='Sangotedo' center='POINT(3.6285 6.4698)' id=None
+DEBUG: 2026-02-18 03:14:14,834 INFO: Existing Alias: None
+DEBUG: 2026-02-18 03:14:14,835 INFO: New Alias: id=None bucket_id=1 name='Sangotedo' location=<WKTElement at 0x111bb8b50; POINT(3.6285 6.4698)>
+DEBUG: 2026-02-18 03:14:59,872 INFO: Application is starting -----------
+DEBUG: 2026-02-18 03:14:59,873 INFO: Application started -----------
+DEBUG: 2026-02-18 03:15:00,394 INFO: Query bucket: None
+DEBUG: 2026-02-18 03:15:00,406 INFO: Query Bucket: h3_index='88589c8563fffff' canonical_name='Sangotedo' center='POINT(3.6285 6.4698)' id=None
+DEBUG: 2026-02-18 03:15:00,410 INFO: Existing Alias: None
+DEBUG: 2026-02-18 03:15:00,411 INFO: New Alias: id=None bucket_id=1 name='Sangotedo' location=<WKTElement at 0x10710db20; POINT(3.6285 6.4698)>
+DEBUG: 2026-02-18 03:15:00,434 INFO: Query bucket: {'id': 1, 'name': 'Sangotedo', 'location': '<WKBElement at 0x10722edf0; 0101000000ba490c022b070d40a9a44e4013e11940>', 'bucket_id': '1'}
+DEBUG: 2026-02-18 03:15:18,323 INFO: Application is starting -----------
+DEBUG: 2026-02-18 03:15:18,325 INFO: Application started -----------
+DEBUG: 2026-02-18 03:15:18,924 INFO: Query bucket: None
+DEBUG: 2026-02-18 03:15:18,938 INFO: Query Bucket: h3_index='88589c8563fffff' canonical_name='Sangotedo' center='POINT(3.6285 6.4698)' id=None
+DEBUG: 2026-02-18 03:15:18,946 INFO: Existing Alias: None
+DEBUG: 2026-02-18 03:15:18,947 INFO: New Alias: id=None bucket_id=1 name='Sangotedo' location=<WKTElement at 0x111bc2b80; POINT(3.6285 6.4698)>
+DEBUG: 2026-02-18 03:15:18,993 INFO: Query bucket: {'id': 1, 'name': 'Sangotedo', 'location': '<WKBElement at 0x10722edf0; 0101000000ba490c022b070d40a9a44e4013e11940>', 'bucket_id': '1'}
+DEBUG: 2026-02-18 04:47:55,398 INFO: Application is starting -----------
+DEBUG: 2026-02-18 04:47:55,400 INFO: Application started -----------
+DEBUG: 2026-02-18 04:47:57,323 INFO: Query bucket: None
+DEBUG: 2026-02-18 04:47:57,334 INFO: Query Bucket: h3_index='88589c8563fffff' canonical_name='Sangotedo' center='POINT(3.6285 6.4698)' id=None
+DEBUG: 2026-02-18 04:47:57,338 INFO: Existing Alias: None
+DEBUG: 2026-02-18 04:47:57,339 INFO: New Alias: id=None bucket_id=1 name='Sangotedo' location=<WKTElement at 0x108b73340; POINT(3.6285 6.4698)>
+DEBUG: 2026-02-18 04:47:57,364 INFO: Query bucket: {'id': 1, 'name': 'Sangotedo', 'location': '<WKBElement at 0x10722edf0; 0101000000ba490c022b070d40a9a44e4013e11940>', 'bucket_id': '1'}
+DEBUG: 2026-02-18 04:48:46,071 INFO: Application is starting -----------
+DEBUG: 2026-02-18 04:48:46,072 INFO: Application started -----------
+DEBUG: 2026-02-18 04:48:46,484 INFO: Query bucket: None
+DEBUG: 2026-02-18 04:48:46,494 INFO: Query Bucket: h3_index='88589c8563fffff' canonical_name='Sangotedo' center='POINT(3.6285 6.4698)' id=None
+DEBUG: 2026-02-18 04:48:46,499 INFO: Existing Alias: None
+DEBUG: 2026-02-18 04:48:46,499 INFO: New Alias: id=None bucket_id=1 name='Sangotedo' location=<WKTElement at 0x11282e3d0; POINT(3.6285 6.4698)>
+DEBUG: 2026-02-18 04:48:46,526 INFO: Query bucket: {'id': 1, 'name': 'Sangotedo', 'location': '<WKBElement at 0x10722edf0; 0101000000ba490c022b070d40a9a44e4013e11940>', 'bucket_id': '1'}
+DEBUG: 2026-02-18 04:51:16,745 INFO: Application is starting -----------
+DEBUG: 2026-02-18 04:51:16,748 INFO: Application started -----------
+DEBUG: 2026-02-18 04:51:17,329 INFO: Query bucket: None
+DEBUG: 2026-02-18 04:51:17,342 INFO: Query Bucket: h3_index='88589c8563fffff' canonical_name='Sangotedo' center='POINT(3.6285 6.4698)' id=None
+DEBUG: 2026-02-18 04:51:17,348 INFO: Existing Alias: None
+DEBUG: 2026-02-18 04:51:17,348 INFO: New Alias: id=None bucket_id=1 name='Sangotedo' location=<WKTElement at 0x106a31310; POINT(3.6285 6.4698)>
+DEBUG: 2026-02-18 04:51:17,377 INFO: Query bucket: {'id': 1, 'name': 'Sangotedo', 'location': '<WKBElement at 0x10722edf0; 0101000000ba490c022b070d40a9a44e4013e11940>', 'bucket_id': '1'}
+DEBUG: 2026-02-18 04:51:51,442 INFO: Application is starting -----------
+DEBUG: 2026-02-18 04:51:51,444 INFO: Application started -----------
+DEBUG: 2026-02-18 04:51:51,823 INFO: Query bucket: None
+DEBUG: 2026-02-18 04:51:51,833 INFO: Query Bucket: h3_index='88589c8563fffff' canonical_name='Sangotedo' center='POINT(3.6285 6.4698)' id=None
+DEBUG: 2026-02-18 04:51:51,837 INFO: Existing Alias: None
+DEBUG: 2026-02-18 04:51:51,838 INFO: New Alias: id=None bucket_id=1 name='Sangotedo' location=<WKTElement at 0x1122593d0; POINT(3.6285 6.4698)>
+DEBUG: 2026-02-18 04:52:57,667 INFO: Application is starting -----------
+DEBUG: 2026-02-18 04:52:57,669 INFO: Application started -----------
+DEBUG: 2026-02-18 04:52:58,096 INFO: Query bucket: None
+DEBUG: 2026-02-18 04:52:58,106 INFO: Query Bucket: h3_index='88589c8563fffff' canonical_name='Sangotedo' center='POINT(3.6285 6.4698)' id=None
+DEBUG: 2026-02-18 04:52:58,111 INFO: Existing Alias: None
+DEBUG: 2026-02-18 04:52:58,112 INFO: New Alias: id=None bucket_id=1 name='Sangotedo' location=<WKTElement at 0x1102de3d0; POINT(3.6285 6.4698)>
+DEBUG: 2026-02-18 04:53:25,370 INFO: Application is starting -----------
+DEBUG: 2026-02-18 04:53:25,371 INFO: Application started -----------
+DEBUG: 2026-02-18 04:53:25,722 INFO: Query bucket: None
+DEBUG: 2026-02-18 04:53:25,732 INFO: Query Bucket: h3_index='88589c8563fffff' canonical_name='Sangotedo' center='POINT(3.6285 6.4698)' id=None
+DEBUG: 2026-02-18 04:53:25,737 INFO: Existing Alias: None
+DEBUG: 2026-02-18 04:53:25,737 INFO: New Alias: id=None bucket_id=1 name='Sangotedo' location=<WKTElement at 0x11384e2e0; POINT(3.6285 6.4698)>
+DEBUG: 2026-02-18 04:56:16,171 INFO: Application is starting -----------
+DEBUG: 2026-02-18 04:56:16,174 INFO: Application started -----------
+DEBUG: 2026-02-18 04:56:16,802 INFO: Query bucket: None
+DEBUG: 2026-02-18 04:56:16,818 INFO: Query Bucket: h3_index='88589c8563fffff' canonical_name='Sangotedo' center='POINT(3.6285 6.4698)' id=None
+DEBUG: 2026-02-18 04:56:16,826 INFO: Existing Alias: None
+DEBUG: 2026-02-18 04:56:16,827 INFO: New Alias: id=None bucket_id=1 name='Sangotedo' location=<WKTElement at 0x10d6ad3a0; POINT(3.6285 6.4698)>
+DEBUG: 2026-02-18 04:59:54,024 INFO: Application is starting -----------
+DEBUG: 2026-02-18 04:59:54,026 INFO: Application started -----------
+DEBUG: 2026-02-18 04:59:54,493 INFO: Query bucket: None
+DEBUG: 2026-02-18 04:59:54,509 INFO: Query Bucket: h3_index='88589c8563fffff' canonical_name='Sangotedo' center='POINT(3.6285 6.4698)' id=None
+DEBUG: 2026-02-18 04:59:54,517 INFO: Existing Alias: None
+DEBUG: 2026-02-18 04:59:54,518 INFO: New Alias: id=None bucket_id=1 name='Sangotedo' location=<WKTElement at 0x1098ba2e0; POINT(3.6285 6.4698)>
+DEBUG: 2026-02-18 04:59:54,545 INFO: Query bucket: {'id': 1, 'name': 'Sangotedo', 'location': '<WKBElement at 0x10722edf0; 0101000000ba490c022b070d40a9a44e4013e11940>', 'bucket_id': '1'}
+DEBUG: 2026-02-18 21:26:58,498 INFO: Application is starting -----------
+DEBUG: 2026-02-18 21:26:58,500 INFO: Application started -----------
+DEBUG: 2026-02-18 21:26:59,872 INFO: Query bucket: None
+DEBUG: 2026-02-18 21:26:59,884 INFO: Query Bucket: h3_index='88589c8563fffff' canonical_name='Sangotedo' center='POINT(3.6285 6.4698)' id=None
+DEBUG: 2026-02-18 21:26:59,889 INFO: Existing Alias: None
+DEBUG: 2026-02-18 21:26:59,889 INFO: New Alias: id=None bucket_id=1 name='Sangotedo' location=<WKTElement at 0x108ec43d0; POINT(3.6285 6.4698)>
+DEBUG: 2026-02-18 21:26:59,924 INFO: Query bucket: {'id': 1, 'name': 'Sangotedo', 'location': '<WKBElement at 0x10722edf0; 0101000000ba490c022b070d40a9a44e4013e11940>', 'bucket_id': '1'}
+DEBUG: 2026-02-18 21:31:18,767 INFO: Application is starting -----------
+DEBUG: 2026-02-18 21:31:18,769 INFO: Application started -----------
+DEBUG: 2026-02-18 21:31:19,248 INFO: Query bucket: None
+DEBUG: 2026-02-18 21:31:19,264 INFO: Query Bucket: h3_index='88589c8563fffff' canonical_name='Sangotedo' center='POINT(3.6285 6.4698)' id=None
+DEBUG: 2026-02-18 21:31:19,269 INFO: Existing Alias: None
+DEBUG: 2026-02-18 21:31:19,270 INFO: New Alias: id=None bucket_id=1 name='Sangotedo' location=<WKTElement at 0x111556340; POINT(3.6285 6.4698)>
+DEBUG: 2026-02-18 21:36:59,984 INFO: Application is starting -----------
+DEBUG: 2026-02-18 21:36:59,986 INFO: Application started -----------
+DEBUG: 2026-02-18 21:37:00,470 INFO: Query bucket: None
+DEBUG: 2026-02-18 21:37:00,481 INFO: Query Bucket: h3_index='88589c8563fffff' canonical_name='Sangotedo' center='POINT(3.6285 6.4698)' id=None
+DEBUG: 2026-02-18 21:37:00,486 INFO: Existing Alias: None
+DEBUG: 2026-02-18 21:37:00,486 INFO: New Alias: id=None bucket_id=1 name='Sangotedo' location=<WKTElement at 0x108912370; POINT(3.6285 6.4698)>
+DEBUG: 2026-02-18 21:37:00,512 INFO: Query bucket: {'id': 1, 'name': 'Sangotedo', 'location': '<WKBElement at 0x10722edf0; 0101000000ba490c022b070d40a9a44e4013e11940>', 'bucket_id': '1'}
+DEBUG: 2026-02-18 21:43:00,734 INFO: Application is starting -----------
+DEBUG: 2026-02-18 21:43:00,736 INFO: Application started -----------
+DEBUG: 2026-02-18 21:43:01,283 INFO: Query bucket: None
+DEBUG: 2026-02-18 21:43:01,296 INFO: Query Bucket: h3_index='88589c8563fffff' canonical_name='Sangotedo' center='POINT(3.6285 6.4698)' id=None
+DEBUG: 2026-02-18 21:43:01,302 INFO: Existing Alias: None
+DEBUG: 2026-02-18 21:43:01,303 INFO: New Alias: id=None bucket_id=1 name='Sangotedo' location=<WKTElement at 0x110bbd3a0; POINT(3.6285 6.4698)>
+DEBUG: 2026-02-18 21:43:01,337 INFO: Query bucket: {'id': 1, 'name': 'Sangotedo', 'location': '<WKBElement at 0x10722edf0; 0101000000ba490c022b070d40a9a44e4013e11940>', 'bucket_id': '1'}
+DEBUG: 2026-02-22 15:28:25,134 INFO: Application is starting -----------
+DEBUG: 2026-02-22 15:28:25,136 INFO: Application started -----------
+DEBUG: 2026-02-22 15:28:26,367 INFO: Query bucket: None
+DEBUG: 2026-02-22 15:28:26,377 INFO: Query Bucket: h3_index='88589c8563fffff' canonical_name='Sangotedo' center='POINT(3.6285 6.4698)' id=None
+DEBUG: 2026-02-22 15:28:26,381 INFO: Existing Alias: None
+DEBUG: 2026-02-22 15:28:26,381 INFO: New Alias: id=None bucket_id=1 name='Sangotedo' location=<WKTElement at 0x111e12370; POINT(3.6285 6.4698)>
+DEBUG: 2026-02-22 15:28:26,414 INFO: Query bucket: {'id': 1, 'name': 'Sangotedo', 'location': '<WKBElement at 0x10722edf0; 0101000000ba490c022b070d40a9a44e4013e11940>', 'bucket_id': '1'}
+DEBUG: 2026-02-22 15:54:18,090 INFO: Application is starting -----------
+DEBUG: 2026-02-22 15:54:18,092 INFO: Application started -----------
+DEBUG: 2026-02-22 15:54:18,970 INFO: Query bucket: None
+DEBUG: 2026-02-22 15:54:18,980 INFO: Query Bucket: h3_index='88589c8563fffff' canonical_name='Sangotedo' center='POINT(3.6285 6.4698)' id=None
+DEBUG: 2026-02-22 15:54:18,985 INFO: Existing Alias: None
+DEBUG: 2026-02-22 15:54:18,985 INFO: New Alias: id=None bucket_id=1 name='Sangotedo' location=<WKTElement at 0x105247400; POINT(3.6285 6.4698)>
+DEBUG: 2026-02-22 15:56:53,895 INFO: Application is starting -----------
+DEBUG: 2026-02-22 15:56:53,897 INFO: Application started -----------
+DEBUG: 2026-02-22 15:56:54,399 INFO: Query bucket: None
+DEBUG: 2026-02-22 15:56:54,409 INFO: Query Bucket: h3_index='88589c8563fffff' canonical_name='Sangotedo' center='POINT(3.6285 6.4698)' id=None
+DEBUG: 2026-02-22 15:56:54,413 INFO: Existing Alias: None
+DEBUG: 2026-02-22 15:56:54,414 INFO: New Alias: id=None bucket_id=1 name='Sangotedo' location=<WKTElement at 0x10fadd3a0; POINT(3.6285 6.4698)>
+DEBUG: 2026-02-22 15:56:54,441 INFO: Query bucket: {'id': 1, 'name': 'Sangotedo', 'location': '<WKBElement at 0x10722edf0; 0101000000ba490c022b070d40a9a44e4013e11940>', 'bucket_id': '1'}
+DEBUG: 2026-02-23 03:34:42,442 INFO: Application is starting -----------
+DEBUG: 2026-02-23 03:34:42,448 INFO: Application started -----------
+DEBUG: 2026-02-23 03:34:47,210 INFO: Query bucket: None
+DEBUG: 2026-02-23 03:34:47,222 INFO: Query Bucket: h3_index='88589c8563fffff' canonical_name='Sangotedo' center='POINT(3.6285 6.4698)' id=None
+DEBUG: 2026-02-23 03:34:47,226 INFO: Existing Alias: None
+DEBUG: 2026-02-23 03:34:47,227 INFO: New Alias: id=None bucket_id=1 name='Sangotedo' location=<WKTElement at 0x10b6093a0; POINT(3.6285 6.4698)>
+DEBUG: 2026-02-23 03:34:47,259 INFO: Query bucket: {'id': 1, 'name': 'Sangotedo', 'location': '<WKBElement at 0x10722edf0; 0101000000ba490c022b070d40a9a44e4013e11940>', 'bucket_id': '1'}
+DEBUG: 2026-02-23 03:36:02,996 INFO: Application is starting -----------
+DEBUG: 2026-02-23 03:36:02,998 INFO: Application started -----------
+DEBUG: 2026-02-23 03:36:34,809 INFO: Application is starting -----------
+DEBUG: 2026-02-23 03:36:34,810 INFO: Application started -----------
+DEBUG: 2026-02-23 03:37:30,164 INFO: Application is starting -----------
+DEBUG: 2026-02-23 03:37:30,166 INFO: Application started -----------
+DEBUG: 2026-02-23 03:38:01,804 INFO: Application is starting -----------
+DEBUG: 2026-02-23 03:38:01,806 INFO: Application started -----------
+DEBUG: 2026-02-23 03:38:27,417 INFO: Application is starting -----------
+DEBUG: 2026-02-23 03:38:27,419 INFO: Application started -----------
+DEBUG: 2026-02-23 03:39:22,503 INFO: Application is starting -----------
+DEBUG: 2026-02-23 03:39:22,505 INFO: Application started -----------
+DEBUG: 2026-02-23 04:39:21,673 INFO: Application is starting -----------
+DEBUG: 2026-02-23 04:39:21,677 INFO: Application started -----------
+DEBUG: 2026-02-23 04:39:23,511 INFO: Get h3 index: 88589c8563fffff
+DEBUG: 2026-02-23 04:41:49,953 INFO: Application is starting -----------
+DEBUG: 2026-02-23 04:41:49,955 INFO: Application started -----------
+DEBUG: 2026-02-23 04:41:50,556 INFO: Get h3 index: 88589c8563fffff
+DEBUG: 2026-02-23 04:43:53,903 INFO: Application is starting -----------
+DEBUG: 2026-02-23 04:43:53,914 INFO: Application started -----------
+DEBUG: 2026-02-23 04:43:57,998 INFO: Get h3 index: 88589c8563fffff
+DEBUG: 2026-02-23 04:45:48,314 INFO: Application is starting -----------
+DEBUG: 2026-02-23 04:45:48,316 INFO: Application started -----------
+DEBUG: 2026-02-23 04:45:49,579 INFO: Get h3 index: 88589c8563fffff
+DEBUG: 2026-02-23 04:46:30,047 INFO: Application is starting -----------
+DEBUG: 2026-02-23 04:46:30,050 INFO: Application started -----------
+DEBUG: 2026-02-23 04:46:30,776 INFO: Get h3 index: 88589c8563fffff
+DEBUG: 2026-02-23 04:47:00,693 INFO: Application is starting -----------
+DEBUG: 2026-02-23 04:47:00,695 INFO: Application started -----------
+DEBUG: 2026-02-23 04:47:01,487 INFO: Get h3 index: 88589c8563fffff
+DEBUG: 2026-02-23 04:47:44,105 INFO: Application is starting -----------
+DEBUG: 2026-02-23 04:47:44,107 INFO: Application started -----------
+DEBUG: 2026-02-23 04:47:46,257 INFO: Application is starting -----------
+DEBUG: 2026-02-23 04:47:46,258 INFO: Application started -----------
+DEBUG: 2026-02-23 04:49:34,474 INFO: Get h3 index: 88589c8563fffff
+DEBUG: 2026-02-23 04:49:34,812 INFO: Query bucket: None
+DEBUG: 2026-02-23 04:49:34,814 INFO: Query Bucket: h3_index='88589c8563fffff' canonical_name='Sangotedo' center='POINT(3.6285 6.4698)' id=None
+DEBUG: 2026-02-23 04:49:34,913 INFO: Existing Alias: None
+DEBUG: 2026-02-23 04:49:34,914 INFO: New Alias: id=None bucket_id=1 name='Sangotedo' location=<WKTElement at 0x105513940; POINT(3.6285 6.4698)>
+DEBUG: 2026-02-23 05:03:18,521 INFO: Get geocode query: (5.113059, 95.383707)
+DEBUG: 2026-02-23 05:03:18,528 INFO: Get h3 index: 8865506db7fffff
+DEBUG: 2026-02-23 05:03:24,028 INFO: Get geocode query: (5.113059, 95.383707)
+DEBUG: 2026-02-23 05:03:24,028 INFO: Get h3 index: 8865506db7fffff
+DEBUG: 2026-02-23 05:03:33,544 INFO: Get geocode query: (6.471022, 3.635581)
+DEBUG: 2026-02-23 05:03:33,545 INFO: Get h3 index: 88589c850dfffff
+DEBUG: 2026-02-23 05:03:50,999 INFO: Get geocode query: (6.471022, 3.635581)
+DEBUG: 2026-02-23 05:03:51,001 INFO: Get h3 index: 88589c850dfffff
+DEBUG: 2026-02-23 05:04:35,290 INFO: Application is starting -----------
+DEBUG: 2026-02-23 05:04:35,291 INFO: Application started -----------
+DEBUG: 2026-02-23 05:04:37,245 INFO: Get h3 index: 88589c8563fffff
+DEBUG: 2026-02-23 05:04:37,775 INFO: Query bucket: h3_index='88589c8563fffff' id=1 center=<WKBElement at 0x105cce700; 0101000000ba490c022b070d40a9a44e4013e11940> canonical_name='Sangotedo' created_at=datetime.datetime(2026, 2, 23, 3, 49, 34, 640581, tzinfo=datetime.timezone.utc)
+DEBUG: 2026-02-23 05:04:37,786 INFO: Existing Alias: name='Sangotedo' location=<WKBElement at 0x105ce0820; 0101000000ba490c022b070d40a9a44e4013e11940> bucket_id=1 id=1
+DEBUG: 2026-02-23 05:04:52,423 INFO: Get geocode query: (6.471022, 3.635581)
+DEBUG: 2026-02-23 05:04:52,425 INFO: Get h3 index: 88589c850dfffff
+DEBUG: 2026-02-23 05:05:19,342 INFO: Get geocode query: (6.471022, 3.635581)
+DEBUG: 2026-02-23 05:05:19,343 INFO: Get h3 index: 88589c850dfffff
+DEBUG: 2026-02-23 05:05:27,698 INFO: Get h3 index: 88589c8563fffff
+DEBUG: 2026-02-23 05:05:27,703 INFO: Query bucket: h3_index='88589c8563fffff' id=1 center=<WKBElement at 0x105d3c550; 0101000000ba490c022b070d40a9a44e4013e11940> canonical_name='Sangotedo' created_at=datetime.datetime(2026, 2, 23, 3, 49, 34, 640581, tzinfo=datetime.timezone.utc)
+DEBUG: 2026-02-23 05:05:27,705 INFO: Existing Alias: name='Sangotedo' location=<WKBElement at 0x105d3c880; 0101000000ba490c022b070d40a9a44e4013e11940> bucket_id=1 id=1
+DEBUG: 2026-02-23 05:05:46,828 INFO: Get geocode query: (6.471022, 3.635581)
+DEBUG: 2026-02-23 05:05:46,829 INFO: Get h3 index: 88589c850dfffff
+DEBUG: 2026-02-23 05:10:24,967 INFO: Application is starting -----------
+DEBUG: 2026-02-23 05:10:24,968 INFO: Application started -----------
+DEBUG: 2026-02-23 05:10:26,508 INFO: Get geocode query: (6.471022, 3.635581)
+DEBUG: 2026-02-23 05:10:26,513 INFO: Get h3 index: 88589c850dfffff
+DEBUG: 2026-02-23 05:13:18,158 INFO: Application is starting -----------
+DEBUG: 2026-02-23 05:13:18,158 INFO: Application started -----------
+DEBUG: 2026-02-23 05:15:53,640 INFO: Application is starting -----------
+DEBUG: 2026-02-23 05:15:53,642 INFO: Application started -----------
+DEBUG: 2026-02-23 05:17:36,208 INFO: Application is starting -----------
+DEBUG: 2026-02-23 05:17:36,210 INFO: Application started -----------
+DEBUG: 2026-02-23 05:17:38,250 INFO: Application is starting -----------
+DEBUG: 2026-02-23 05:17:38,251 INFO: Application started -----------
+DEBUG: 2026-02-23 05:18:05,470 INFO: Application is starting -----------
+DEBUG: 2026-02-23 05:18:05,471 INFO: Application started -----------
+DEBUG: 2026-02-23 05:19:18,591 INFO: Application is starting -----------
+DEBUG: 2026-02-23 05:19:18,592 INFO: Application started -----------
+DEBUG: 2026-02-23 05:21:17,806 INFO: Application is starting -----------
+DEBUG: 2026-02-23 05:21:17,807 INFO: Application started -----------
+DEBUG: 2026-02-23 05:24:48,183 INFO: Application is starting -----------
+DEBUG: 2026-02-23 05:24:48,187 INFO: Application started -----------
+DEBUG: 2026-02-23 05:25:32,203 INFO: Application is starting -----------
+DEBUG: 2026-02-23 05:25:32,204 INFO: Application started -----------
+DEBUG: 2026-02-23 05:25:59,761 INFO: Application is starting -----------
+DEBUG: 2026-02-23 05:25:59,763 INFO: Application started -----------
+DEBUG: 2026-02-23 05:26:01,926 INFO: Application is starting -----------
+DEBUG: 2026-02-23 05:26:01,927 INFO: Application started -----------
+DEBUG: 2026-02-23 05:28:22,775 INFO: Application is starting -----------
+DEBUG: 2026-02-23 05:28:22,776 INFO: Application started -----------
+DEBUG: 2026-02-23 05:31:33,646 INFO: Application is starting -----------
+DEBUG: 2026-02-23 05:31:33,648 INFO: Application started -----------
+DEBUG: 2026-02-23 05:33:03,301 INFO: Application is starting -----------
+DEBUG: 2026-02-23 05:33:03,302 INFO: Application started -----------
+DEBUG: 2026-02-23 05:34:11,282 INFO: Application is starting -----------
+DEBUG: 2026-02-23 05:34:11,288 INFO: Application started -----------
+DEBUG: 2026-02-23 05:35:13,774 INFO: Application is starting -----------
+DEBUG: 2026-02-23 05:35:13,775 INFO: Application started -----------
+DEBUG: 2026-02-23 05:35:29,677 INFO: Application is starting -----------
+DEBUG: 2026-02-23 05:35:29,678 INFO: Application started -----------
+DEBUG: 2026-02-23 05:35:30,642 INFO: Get h3 index: 88589c8563fffff
+DEBUG: 2026-02-23 05:36:40,768 INFO: Application is starting -----------
+DEBUG: 2026-02-23 05:36:40,771 INFO: Application started -----------
+DEBUG: 2026-02-23 05:38:58,625 INFO: Application is starting -----------
+DEBUG: 2026-02-23 05:38:58,627 INFO: Application started -----------
+DEBUG: 2026-02-23 05:39:01,215 INFO: Get h3 index: 88589c8563fffff
+DEBUG: 2026-02-23 05:41:22,483 INFO: Application is starting -----------
+DEBUG: 2026-02-23 05:41:22,485 INFO: Application started -----------
+DEBUG: 2026-02-23 05:41:22,517 INFO: Application is starting -----------
+DEBUG: 2026-02-23 05:41:22,518 INFO: Application started -----------
+DEBUG: 2026-02-23 05:41:22,986 INFO: Get h3 index: 88589c8563fffff
+DEBUG: 2026-02-23 05:41:23,097 INFO: Query bucket: None
+DEBUG: 2026-02-23 05:41:23,098 INFO: Query Bucket: h3_index='88589c8563fffff' canonical_name='Sangotedo' center='POINT(3.6285 6.4698)' id=None
+DEBUG: 2026-02-23 05:41:23,102 INFO: Existing Alias: None
+DEBUG: 2026-02-23 05:41:23,103 INFO: New Alias: id=None bucket_id=1 name='Sangotedo' location=<WKTElement at 0x10dc23a90; POINT(3.6285 6.4698)>

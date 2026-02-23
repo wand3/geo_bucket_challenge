@@ -1,0 +1,37 @@
+DEBUG: 2026-02-23 04:39:23,530 ERROR: Error processing route: Task <Task pending name='Task-6' coro=<TestLocationNormalization.test_create_property() running at /Users/user/Desktop/Projects/geo_bucket_challenge/tests/integration/test_properties.py:46> cb=[_run_until_complete_cb() at /Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/asyncio/base_events.py:184]> got Future <Future pending cb=[BaseProtocol._on_waiter_completed()]> attached to a different loop
+DEBUG: 2026-02-23 04:41:50,580 ERROR: Error processing route: Task <Task pending name='Task-6' coro=<TestLocationNormalization.test_create_property() running at /Users/user/Desktop/Projects/geo_bucket_challenge/tests/integration/test_properties.py:46> cb=[_run_until_complete_cb() at /Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/asyncio/base_events.py:184]> got Future <Future pending cb=[BaseProtocol._on_waiter_completed()]> attached to a different loop
+DEBUG: 2026-02-23 04:41:50,614 ERROR: Error processing route: assert 422 == 200
+ +  where 422 = <Response [422 Unprocessable Entity]>.status_code
+DEBUG: 2026-02-23 04:43:58,021 ERROR: Error processing route: Task <Task pending name='Task-6' coro=<TestLocationNormalization.test_create_property() running at /Users/user/Desktop/Projects/geo_bucket_challenge/tests/integration/test_properties.py:46> cb=[_run_until_complete_cb() at /Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/asyncio/base_events.py:184]> got Future <Future pending cb=[BaseProtocol._on_waiter_completed()]> attached to a different loop
+DEBUG: 2026-02-23 04:43:58,053 ERROR: Error processing route: (sqlalchemy.dialects.postgresql.asyncpg.InterfaceError) <class 'asyncpg.exceptions._base.InterfaceError'>: cannot perform operation: another operation is in progress
+[SQL: SELECT location_aliases.bucket_id 
+FROM location_aliases 
+WHERE location_aliases.name ILIKE $1::VARCHAR]
+[parameters: ('%Sangotedo%',)]
+(Background on this error at: https://sqlalche.me/e/20/rvf5)
+DEBUG: 2026-02-23 04:45:49,594 ERROR: Error processing route: Task <Task pending name='Task-6' coro=<TestLocationNormalization.test_create_property() running at /Users/user/Desktop/Projects/geo_bucket_challenge/tests/integration/test_properties.py:46> cb=[_run_until_complete_cb() at /Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/asyncio/base_events.py:184]> got Future <Future pending cb=[BaseProtocol._on_waiter_completed()]> attached to a different loop
+DEBUG: 2026-02-23 04:45:49,629 ERROR: Error processing route: (sqlalchemy.dialects.postgresql.asyncpg.InterfaceError) <class 'asyncpg.exceptions._base.InterfaceError'>: cannot perform operation: another operation is in progress
+[SQL: SELECT location_aliases.bucket_id 
+FROM location_aliases 
+WHERE location_aliases.name ILIKE $1::VARCHAR]
+[parameters: ('%Sangotedo%',)]
+(Background on this error at: https://sqlalche.me/e/20/rvf5)
+DEBUG: 2026-02-23 04:46:30,790 ERROR: Error processing route: Task <Task pending name='Task-6' coro=<TestLocationNormalization.test_create_property() running at /Users/user/Desktop/Projects/geo_bucket_challenge/tests/integration/test_properties.py:46> cb=[_run_until_complete_cb() at /Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/asyncio/base_events.py:184]> got Future <Future pending cb=[BaseProtocol._on_waiter_completed()]> attached to a different loop
+DEBUG: 2026-02-23 04:46:30,821 ERROR: Error processing route: (sqlalchemy.dialects.postgresql.asyncpg.InterfaceError) <class 'asyncpg.exceptions._base.InterfaceError'>: cannot perform operation: another operation is in progress
+[SQL: SELECT location_aliases.bucket_id 
+FROM location_aliases 
+WHERE location_aliases.name ILIKE $1::VARCHAR]
+[parameters: ('%Ojota%',)]
+(Background on this error at: https://sqlalche.me/e/20/rvf5)
+DEBUG: 2026-02-23 04:47:01,506 ERROR: Error processing route: Task <Task pending name='Task-6' coro=<TestLocationNormalization.test_create_property() running at /Users/user/Desktop/Projects/geo_bucket_challenge/tests/integration/test_properties.py:46> cb=[_run_until_complete_cb() at /Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/asyncio/base_events.py:184]> got Future <Future pending cb=[BaseProtocol._on_waiter_completed()]> attached to a different loop
+DEBUG: 2026-02-23 04:47:01,545 ERROR: Error processing route: assert 422 == 200
+ +  where 422 = <Response [422 Unprocessable Entity]>.status_code
+DEBUG: 2026-02-23 05:35:30,660 ERROR: Error processing route: Task <Task pending name='Task-6' coro=<TestLocationNormalization.test_create_property() running at /Users/user/Desktop/Projects/geo_bucket_challenge/tests/integration/test_properties.py:46> cb=[_run_until_complete_cb() at /Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/asyncio/base_events.py:184]> got Future <Future pending cb=[BaseProtocol._on_waiter_completed()]> attached to a different loop
+DEBUG: 2026-02-23 05:35:30,697 ERROR: Error processing route: assert False
+ +  where False = isinstance({'detail': [{'ctx': {'min_length': 3}, 'input': '', 'loc': ['query', 'location'], 'msg': 'String should have at least 3 characters', ...}]}, list)
+DEBUG: 2026-02-23 05:39:01,234 ERROR: Error processing route: Task <Task pending name='Task-6' coro=<TestLocationNormalization.test_create_property() running at /Users/user/Desktop/Projects/geo_bucket_challenge/tests/integration/test_properties.py:46> cb=[_run_until_complete_cb() at /Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/asyncio/base_events.py:184]> got Future <Future pending cb=[BaseProtocol._on_waiter_completed()]> attached to a different loop
+DEBUG: 2026-02-23 05:39:01,271 ERROR: Error processing route: assert False
+ +  where False = isinstance({'detail': [{'ctx': {'min_length': 3}, 'input': '', 'loc': ['query', 'location'], 'msg': 'String should have at least 3 characters', ...}]}, list)
+DEBUG: 2026-02-23 05:41:23,002 ERROR: Error processing route: Task <Task pending name='Task-6' coro=<TestLocationNormalization.test_create_property() running at /Users/user/Desktop/Projects/geo_bucket_challenge/tests/integration/test_properties.py:46> cb=[_run_until_complete_cb() at /Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/asyncio/base_events.py:184]> got Future <Future pending cb=[BaseProtocol._on_waiter_completed()]> attached to a different loop
+DEBUG: 2026-02-23 05:41:23,035 ERROR: Error processing route: assert False
+ +  where False = isinstance({'detail': [{'ctx': {'min_length': 3}, 'input': '', 'loc': ['query', 'location'], 'msg': 'String should have at least 3 characters', ...}]}, list)

@@ -4,7 +4,7 @@ from typing import Annotated, List
 from sqlmodel import Field, Session
 from .database import get_session
 from .models import Property, GeoBucket, LocationAlias
-from .schema import PropertyCreate, PropertyBase, PropertyOutSchema, GeoBucketOutSchema
+from .schema import PropertyCreate, PropertyBase, PropertyInDB, PropertyOutSchema, GeoBucketOutSchema
 from .utils import geocode_query, search_properties, get_h3_index, get_nearby_h3_indices, create_property
 import h3
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -20,7 +20,7 @@ async def process_query(
     return "Welcome on board"
 
 
-@api_router.post("/properties", response_model=PropertyBase, status_code=201)
+@api_router.post("/properties", response_model=PropertyInDB, status_code=201)
 async def create_property_route(
     prop_in: PropertyCreate,
     session: AsyncSession = Depends(get_session)
@@ -41,7 +41,17 @@ async def search_property(
     Search Endpoint.
     Uses hybrid logic: DB Aliases -> Geocoding Fallback -> H3 Lookup.
     """
+    if len(location) < 3:
+        raise
     results = await search_properties(session, location)
-    if not results:
-        return []
-    return results
+    try:
+        if not results:
+            return []
+        return results
+    except Exception as e:
+        return logger.error("String should have at least 3 characters", e)
+
+
+@api_router.get("/api/geo-buckets/stats")
+async def bucket_stats():
+    pass

@@ -48,16 +48,6 @@ def sample_normalization_test_data():
 
 
 @pytest.fixture
-async def sample_geo_bucket():
-    return {
-        "h3_index": "title",
-        "canonical_name": "Sangotedo",
-        "center": "0101000020E6100000BA490C022B070D40A9A44E4013E11940",
-        "created_at": "3.6285"
-    }
-
-
-@pytest.fixture
 async def sample_property_output():
     return {
         "title": "Apartment A",
@@ -75,5 +65,23 @@ async def sample_property_output():
         "location_aliases": []
     }
 
-async def sample_alias():
-    pass
+
+@pytest.fixture
+async def sample_existing_alias():
+    return {
+        "id": 1,
+        "name": "Sangotedo",
+        "location": "<WKBElement at 0x10722edf0; 0101000000ba490c022b070d40a9a44e4013e11940>",
+        "bucket_id": '1'
+    }
+
+
+@pytest.fixture
+async def sample_existing_bucket():
+    return {
+        "id": 1,
+        "bucket_id": 1,
+        "h3_index": "88589c8563fffff",
+        "canonical_name": "Sangotedo",
+        "center": "POINT(3.6285 6.4698)"
+    }

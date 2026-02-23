@@ -62,19 +62,22 @@ def get_nearby_h3_indices(h3_index: str, k: int = 1) -> set:
     return h3.k_ring(h3_index, k)
 
 
-async def search_properties(session: AsyncSession, location_query: str) -> List[Property]:
+async def search_properties(session: AsyncSession, location: str) -> List[Property]:
     """
     CRUD: Performs the 3-step hybrid search strategy.
     """
     bucket_ids = set()
-    cleaned_query = location_query.strip()
+    cleaned_query = location.strip("")
 
     # Alias Search (Fast DB Lookup)
     # Using ILIKE for partial matching (e.g., "Sangotedo" matches "Sangotedo, Ajah")
     stmt = select(LocationAlias.bucket_id).where(
         LocationAlias.name.ilike(f"%{cleaned_query}%")
     )
-    found_ids = (await session.execute(stmt)).scalars().all()
+    # found_ids = (await session.execute(stmt)).scalars().all()
+    # bucket_ids.update(found_ids)
+    alias_result = await session.execute(stmt)
+    found_ids = alias_result.scalars().all()  # list of bucket ids
     bucket_ids.update(found_ids)
 
     # Geocoding Fallback (External API)
@@ -96,9 +99,14 @@ async def search_properties(session: AsyncSession, location_query: str) -> List[
         return []
 
     # Fetch all properties linked to the found buckets
-    prop_stmt = select(Property).where(Property.bucket_id.in_(bucket_ids))
-    return_prop_smtp = await (session.execute(prop_stmt)).scalars().all()
-    return return_prop_smtp
+    # prop_stmt = select(Property).where(Property.bucket_id.in_(bucket_ids))
+    # return_prop_smtp = await session.execute(prop_stmt).scalars().all()
+    # return return_prop_smtp
+    bucket_list = list(bucket_ids)
+    prop_stmt = select(Property).where(Property.bucket_id.in_(bucket_list))
+    prop_result = await session.execute(prop_stmt)
+    properties = prop_result.scalars().all()
+    return properties
 
 
 async def create_property(session: AsyncSession, prop_in: PropertyCreate) -> Property:
@@ -131,7 +139,7 @@ async def create_property(session: AsyncSession, prop_in: PropertyCreate) -> Pro
 
         logger.info(f"Query Bucket: {bucket}")
 
-        await session.add(bucket)
+        session.add(bucket)
         await session.flush()  # Generate ID without committing
         await session.refresh(bucket)
 
@@ -155,7 +163,7 @@ async def create_property(session: AsyncSession, prop_in: PropertyCreate) -> Pro
 
         logger.info(f"New Alias: {new_alias}")
 
-        await session.add(new_alias)
+        session.add(new_alias)
     # 4. Create Property
     prop_geom = f"POINT({prop_in.lng} {prop_in.lat})"
     db_property = Property(
@@ -172,7 +180,7 @@ async def create_property(session: AsyncSession, prop_in: PropertyCreate) -> Pro
         created_at=datetime.utcnow()
     )
 
-    await session.add(db_property)
+    session.add(db_property)
     await session.commit()
     await session.refresh(db_property)
     return db_property

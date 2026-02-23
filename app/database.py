@@ -38,7 +38,7 @@ async def create_db_and_tables():
     """
     async with engine.begin() as conn:
         await conn.execute(text("CREATE EXTENSION IF NOT EXISTS postgis;"))
-        await conn.run_sync(SQLModel.metadata.drop_all) # Optional: drop tables first
+        # await conn.run_sync(SQLModel.metadata.drop_all) # Optional: drop tables first
         await conn.run_sync(SQLModel.metadata.create_all)
         pass
 
