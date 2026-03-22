@@ -1,10 +1,7 @@
----
-
 # 🏠 Geo_bucket_challenge: Geospatial Property Engine
 
 **Geo_bucket_challenge** is a high-performance backend API designed to solve the "Dirty Data" problem in real estate. Instead of relying on inconsistent user-inputted location names, it uses **Uber’s H3 Discrete Global Grid System** to "bucket" properties into precise hexagonal cells.
 
----
 
 ## 🚀 Key Features
 
@@ -71,6 +68,7 @@ pytest --cov=app tests/
     ```bash
     python3 -m venv env
     source env/bin/activate
+    pip install -r requirements.txt
 
     touch .env
     # Ensure .env contains
@@ -83,6 +81,9 @@ pytest --cov=app tests/
       SECRET_KEY,
       DATABASE_URL,
       TEST_DATABASE_URL,
+
+    fastapi dev app/main.py
+
     ```
 
 ---
