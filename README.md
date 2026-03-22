@@ -82,8 +82,9 @@ pytest --cov=app tests/
       DATABASE_URL,
       TEST_DATABASE_URL,
 
-    fastapi dev app/main.py
-
     ```
-
+ 3.  **Run app:**
+    ```bash
+        fastapi run app/main.py
+    ```
 ---
