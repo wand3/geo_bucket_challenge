@@ -143,7 +143,7 @@ async def create_property(session: AsyncSession, prop_in: PropertyCreate) -> Pro
         await session.flush()  # Generate ID without committing
         await session.refresh(bucket)
 
-    # Handle Location Aliases
+    # 3. Handle Location Aliases
     query_alias = select(LocationAlias).where(
         func.lower(LocationAlias.name) == prop_in.location_name.lower(),
         LocationAlias.bucket_id == bucket.id

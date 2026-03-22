@@ -31,16 +31,6 @@ class TestLocationNormalization:
         :return: sample_property_base_input
 
         """
-        # Mock the dependencies
-        # mock_processor_instance = AsyncMock(spec=AsyncSession)
-        # # Create an AsyncMock for the database session
-        # mock_db_session = AsyncMock(spec=mock_db)
-        # with patch("app.database.get_session", autospec=True) as mock_get_session:
-        #     # mock get_session dependency overide and must return a yieldable mock, so we can mock the async generator itself
-        #     async def mock_session_generator():
-        #         return mock_db_session
-        #
-        #     mock_get_session.return_value = await mock_session_generator()
         try:
             # make request
             response = await async_client.post("/api/properties", json=sample_property_base_input)
@@ -106,9 +96,8 @@ class TestLocationNormalization:
         try:
             location = ""
             response = await async_client.get(f"/api/properties/search?location={location}")
+            # logger.info(f"Response successfully awaited")
             assert response.status_code == 422
-            results = response.json()
-            assert isinstance(results, list)
-            assert len(results) == 0
         except Exception as e:
             logger.error(f"Error processing route: {e}")
+
